@@ -1,12 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>net6.0</TargetFrameworks>
+	<TargetFrameworks>net8.0</TargetFrameworks>
 	<ImplicitUsings>enable</ImplicitUsings>
-	<LangVersion>latest</LangVersion>
+	<EnablePackageValidation>true</EnablePackageValidation>
+	<RepositoryUrl>https://github.com/surendra37/RspApiClient.git</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>RSP</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
+	<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
 	<PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
 	<PackageReference Include="Riok.Mapperly" Version="3.4.0" />
   </ItemGroup>
