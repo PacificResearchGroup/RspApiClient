@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net6.0</TargetFrameworks>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
+	<PackageReference Include="Riok.Mapperly" Version="3.4.0" />
+  </ItemGroup>
+
+</Project>
