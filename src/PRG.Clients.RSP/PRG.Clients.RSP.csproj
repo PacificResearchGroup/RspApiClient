@@ -1,21 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	<TargetFrameworks>net8.0</TargetFrameworks>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<EnablePackageValidation>true</EnablePackageValidation>
-	<RepositoryUrl>https://github.com/surendra37/RspApiClient.git</RepositoryUrl>
-	<RepositoryType>git</RepositoryType>
-	<PackageTags>RSP</PackageTags>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net8.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/surendra37/RspApiClient.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>RSP</PackageTags>
+		<Authors>Pacific Research Group</Authors>
+		<Description></Description>
 
-  <ItemGroup>
-	<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
-	  <PrivateAssets>all</PrivateAssets>
-	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	</PackageReference>
-	<PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
-	<PackageReference Include="Riok.Mapperly" Version="3.4.0" />
-  </ItemGroup>
+		<!-- PackageProjectUrl is different from the repository URL. It can be a documentation
+         website or a website explaining the project -->
+		<PackageProjectUrl>https://github.com/surendra37/RspApiClient</PackageProjectUrl>
+
+		<!-- A list of tags to help the search engine to understand the content of the package -->
+		<PackageTags>RSP, PRG</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
+		<PackageReference Include="Riok.Mapperly" Version="3.4.0" />
+	</ItemGroup>
 
 </Project>
