@@ -1,11 +1,4 @@
-﻿using Riok.Mapperly.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PRG.Clients.RSP.Dtos
+﻿namespace PRG.Clients.RSP.Dtos
 {
     public class PromotionEntryDto
     {
@@ -18,5 +11,6 @@ namespace PRG.Clients.RSP.Dtos
         public bool ValidEntry { get; set; }
         public bool WasSwiped { get; set; }
         public string Id { get; set; }
+        public string InvalidEntryReason { get; set; }
     }
 }
