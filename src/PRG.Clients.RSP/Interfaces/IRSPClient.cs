@@ -8,11 +8,11 @@ namespace PRG.Clients.RSP.Interfaces
         Task<PromotionEntryDto[]> GetPromotionEntriesAsync(string promotionId, int page, CancellationToken ct);
         Task<GetUsersResponseDto> GetUsersAsync(int page, int limit, string filter, CancellationToken ct);
         Task<string> GetVoucherAsync(string promotionID, string entryID, CancellationToken ct);
-        Task<ResponseDto> LoginAsync(string username, string password, string shopID, CancellationToken ct);
+        Task<ResponseDto> LoginAsync(string username, string password, CancellationToken ct);
         Task<string> PrintVoucherAsync(string promotionID, string entryID, CancellationToken ct);
         Task<ResponseDto> PromotionsEntryAsync(string number, bool cardWasSwiped, CancellationToken ct);
         Task<MemberDto> ValidateMembershipNumberAsync(string number, bool swipe, CancellationToken ct);
-        Task<IReadOnlyCollection<string>> GetActivePromotionsAsync(CancellationToken ct);
+        Task<IReadOnlyCollection<string>> GetActivePromotionsAsync(string clubCode, CancellationToken ct);
     }
 
     public interface IRSPClientAsync

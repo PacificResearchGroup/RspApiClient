@@ -16,7 +16,6 @@ namespace PRG.Clients.RSP
         private readonly RestClientOptions _options;
         private RestClient _client;
         private readonly RspMapper _mapper;
-        private string _shopID;
 
         //public bool IsAuthenticated { get; set; } = false;
 
@@ -40,7 +39,7 @@ namespace PRG.Clients.RSP
             }));
         }
 
-        public async Task<ResponseDto> LoginAsync(string username, string password, string shopID, CancellationToken ct)
+        public async Task<ResponseDto> LoginAsync(string username, string password, CancellationToken ct)
         {
             string csrfToken = await RspHelpers.GetCsrfTokenAsync(_client, ct);
 
@@ -51,7 +50,6 @@ namespace PRG.Clients.RSP
                 .AddJsonBody(new LoginRequest(username, password));
 
             ResponseBase response = await _client.PostAsync<ResponseBase>(request, ct);
-            _shopID = shopID;
             return _mapper.MapResponseBase(response);
         }
 
@@ -89,10 +87,10 @@ namespace PRG.Clients.RSP
 
         }
 
-        public async Task<IReadOnlyCollection<string>> GetActivePromotionsAsync(CancellationToken ct)
+        public async Task<IReadOnlyCollection<string>> GetActivePromotionsAsync(string clubCode, CancellationToken ct)
         {
             // https://rspuat.national.aaa.com/promotions/list/004
-            RestRequest request = new($"/promotions/list/{_shopID}");
+            RestRequest request = new($"/promotions/list/{clubCode}");
 
             GetPromotionsResponse[] response = await _client.GetAsync<GetPromotionsResponse[]>(request, ct);
             return response
