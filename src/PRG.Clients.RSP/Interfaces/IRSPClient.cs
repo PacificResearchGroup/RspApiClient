@@ -1,4 +1,5 @@
 ﻿using PRG.Clients.RSP.Dtos;
+using PRG.Clients.RSP.Requests;
 
 namespace PRG.Clients.RSP.Interfaces
 {
@@ -13,6 +14,7 @@ namespace PRG.Clients.RSP.Interfaces
         Task<ResponseDto> PromotionsEntryAsync(string number, bool cardWasSwiped, CancellationToken ct);
         Task<MemberDto> ValidateMembershipNumberAsync(string number, bool swipe, CancellationToken ct);
         Task<IReadOnlyCollection<string>> GetActivePromotionsAsync(string clubCode, CancellationToken ct);
+        Task<string> CreateNewOrderAsync(string firstName, string lastName, string member, string shopID, string phoneNumber, string type, VehicleDto vehicle, CancellationToken ct);
     }
 
     public interface IRSPClientAsync
